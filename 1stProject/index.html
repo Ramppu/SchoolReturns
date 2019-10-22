@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple To-Do List</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+    <div class="row">
+      <div class="six columns"><h1>Simple TO-DO List</h1></div>
+      <div class="six columns"><p>This Site was Developed as a project for school.<br>It's main purpose is to practise Javascript</p></div>
+    </div>
+      <div class="row">
+        <div class="six columns" id="CTable">
+          <form id="toDo" onsubmit="return false" autocomplete="off">
+              <label for = "task1">Task 1</label>
+                <input type="text" placeholder="1"id="t1"required>
+
+              <label for = "task2">Task 2</label>
+               <input type="text" placeholder="2" id="t2"required>
+
+             <label for = "task3">Task 3</label>
+              <input type="text" placeholder="3"id="t3"required>
+
+             <label for = "Submit"></label>
+              <input id="sbmt" type="submit" value="Submit" onclick="listPrint()">
+          </form>
+        </div>
+          <div class="six columns" id="lst" onclick="hideInfo()">
+            <ul id="list"></ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns" id="picture"><img id="pic" src="img/smileW.png" onmouseover="show()" onmouseout="hide()"><p id="who">I Did This :)</p></img></div>
+        <div class="six columns" id="info"><p id="inst">Items in the list can be removed by clicking on them.<br>List Count is capped to 6 items.</p></div>
+      </div>
+      <div class="row" id="linkTable">
+        <div class="12 colums">
+          <div class="dropdown">
+            <button onclick="dropDown()" class="dropbtn"><span class="arrow">&#10532;</span> Dropdown <span class="arrow">&#10531;</span></button id="lnkBtn">
+            <div id="dropdown" class="dropdown-content">
+              <a href="https://www.google.com" target="_blank">Google</a>
+              <a href="https://hasitleaked.com" target="_blank">Has It Leaked?</a>
+              <a href="https://www.laurea.fi" target="_blank">Laurea</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div id="modal" class="modal">
+    <div class="content">
+      <span class="close">&times;</span>
+      <p>Please insert atleast one task!</p>
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script>hideInfo()</script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
