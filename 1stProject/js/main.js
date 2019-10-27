@@ -62,6 +62,7 @@ function hideInfo() {
     document.getElementById('info').style.opacity = '0.0';
   }
   else {
+    document.getElementById('list').style.opacity = '1.0';
     document.getElementById('info').style.opacity = '1.0';
   }
 }
@@ -85,9 +86,8 @@ function checkStorage() {
     var k = localStorage.length;
     var listElement = document.createElement("li"); //Creating an 'li' element
     listElement.onclick = function(e) {this.parentNode.removeChild(this);localStorage.removeItem(k);k--}; //Creating a function for every 'li' element, that removes it by mouseclick
-    var listContent = document.createTextNode(localStorage.getItem(0).textContent); //Creating a text node, that can be given to the 'li' element
+    var listContent = document.createTextNode(localStorage.getItem(i)); //Creating a text node, that can be given to the 'li' element
         listElement.appendChild(listContent);
         document.getElementById('list').appendChild(listElement); //Else, it is printed on the site
-
   }
 }
