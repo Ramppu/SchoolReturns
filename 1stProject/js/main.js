@@ -23,14 +23,16 @@ function listPrint() {
         }
         else {
           for(var i = 0; i < tasks.length-1;i++) { //tasks.length-1 because 'submit' considers itself as input, and we dont want to print that to the site
+            var l = document.getElementsByTagName('li').length;
             var k = localStorage.length;
             var listElement = document.createElement("li"); //Creating an 'li' element
-            listElement.onclick = function(e) {this.parentNode.removeChild(this);localStorage.removeItem(k);k--}; //Creating a function for every 'li' element, that removes it by mouseclick
+            listElement.onclick = function(e) {this.parentNode.removeChild(this);deleteStorage()}; //Creating a function for every 'li' element, that removes it by mouseclick
             var listContent = document.createTextNode(tasks[i].value); //Creating a text node, that can be given to the 'li' element
               if(tasks[i].value == ''){
                 console.log('Empty values are not printed'); //if 'tasks[i].value' is empty, it is not printed to the site
               }
               else {
+                listElement.setAttribute('id', l);
                 listElement.appendChild(listContent);
                 document.getElementById('list').appendChild(listElement); //Else, it is printed on the site
                 localStorage.setItem(k,tasks[i].value);
@@ -82,12 +84,18 @@ function dropDown() {
   }
 }
 function checkStorage() {
-  for(var i = 0; i < localStorage.length;i++) { //tasks.length-1 because 'submit' considers itself as input, and we dont want to print that to the site
+  for(var i = 0; i < localStorage.length;i++) {
     var k = localStorage.length;
+    var l = document.getElementsByTagName('li').length;
     var listElement = document.createElement("li"); //Creating an 'li' element
-    listElement.onclick = function(e) {this.parentNode.removeChild(this);localStorage.removeItem(k);k--}; //Creating a function for every 'li' element, that removes it by mouseclick
+    listElement.setAttribute('id', l);
+    listElement.onclick = function(e) {this.parentNode.removeChild(this);deleteStorage()}; //Creating a function for every 'li' element, that removes it by mouseclick
     var listContent = document.createTextNode(localStorage.getItem(i)); //Creating a text node, that can be given to the 'li' element
         listElement.appendChild(listContent);
-        document.getElementById('list').appendChild(listElement); //Else, it is printed on the site
+        document.getElementById('list').appendChild(listElement);
   }
+}
+function deleteStorage() {
+  var i = event.target.getAttribute('id');
+  localStorage.removeItem(i);
 }
