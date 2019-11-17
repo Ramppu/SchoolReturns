@@ -1,0 +1,116 @@
+body {
+  background-color: #191414;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #1DB954;
+  margin-left: 1%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+p {
+  margin-left: 2%;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+}
+form {
+  margin-top: 5%;
+}
+input,select {
+  width: 25%;
+  opacity: 0.5;
+  padding: 12px 20px;
+  margin: 1%;
+  margin-left: 5%;
+  display: block;
+  border: 1px solid #1DB954;
+  border-radius: 25px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #191414;
+  display: inline;
+}
+
+button {
+  border-radius: 20px;
+  background-color: transparent;
+  color: #1DB954;
+  border: 1px solid #1DB954
+}
+
+
+img {
+  vertical-align: middle;
+  width: 74%;
+  height: auto;
+  margin-left: 16%;
+}
+
+#linkP {
+  margin-left: 5%;
+  font-size: 2em;
+}
+
+#headerimg {
+  height: auto;
+  width: 20%;
+  margin-top: 2%;
+}
+
+#form {
+  display: block !important;
+}
+
+#infoP {
+  border-top: 5px solid
+  #1DB954;
+  border-radius: 25px;
+  width: 79%;
+  margin-left: 7%;
+  font-size: 1.2em;
+  border-bottom: 3px solid  #1DB954;
+  padding: 4%;
+}
+  @media only screen and (max-width: 764px) {
+    #infoP {
+      font-size: 0.75em;
+    }
+  }
+
+  .container-class {
+    background-color: #191414;
+    border: 3px solid yellow;
+  }
+
+  @media only screen and (max-width: 800px) {
+    h1 {
+      font-size: 3em;
+    }
+    img {
+      width: 50%;
+      margin-left: 25%;
+    }
+    #picture {
+      display: block;
+      width: 100%;
+      min-width: 100% !important;
+    }
+    #infoP {
+      display: block;
+      width: 55%;
+      margin-top: 4%;
+      margin-left: 23%;
+      font-size: 1em;
+    }
+    #link {
+      display: block;
+      width: 100%;
+      min-width: 100% !important;
+      font-size: 5vw;
+    }
+  }

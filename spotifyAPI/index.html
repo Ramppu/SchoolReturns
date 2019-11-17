@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Spotify API Search</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600i&display=swap" rel="stylesheet">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+<body onload="initiate(); success()">
+  <div class = "row">
+    <div class="col">
+      <h1>Search Spotify |</h1>
+      <p>Search for Artists, Songs and Albums<br>Utilizing Spotify's search API
+      <button onclick="grantToken()">Request a Token</button></p>
+    </div>
+  </div>
+  <div class="row" id="form">
+    <form onsubmit="return false" autocomplete="off">
+          <input type="text" placeholder="Search"id="query">
+
+          <select name="type" id="type">
+            <option value="artist">artist</option>
+            <option value="album">album</option>
+            <option value="track">track</option>
+          </select>
+
+        <label for = "Submit"></label>
+          <input id="sbmt" type="submit" value="Submit" onclick="search()">
+    </form>
+  </div>
+    <div class="row">
+      <div class="col" id="picture"></div>
+      <div class="col" id="info"></div>
+      <div class="col" id="link"></div>
+    </div>
+
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="js/main.js"></script>
+</body>
