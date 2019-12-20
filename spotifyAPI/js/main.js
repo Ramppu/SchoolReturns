@@ -118,7 +118,6 @@ function search() {
       document.getElementById('link').innerHTML = '';
       document.getElementById('link').append(text);
 
-      //EMPTYING THE DIV WOULDNT BE NECESSARY IF jQuery usage was allowed, jQuery alternatives in comments above the code
    }
  }
 }
