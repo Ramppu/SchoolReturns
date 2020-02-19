@@ -33,7 +33,7 @@ function listPrint() {
               }
               else {
                 listElement.setAttribute('id', l);
-                listElement.appendChild(listContent);
+                listElement.appendChild(listContent); // <li id="0"><tasks[i].value</li>
                 document.getElementById('list').appendChild(listElement); //Else, it is printed on the site
                 localStorage.setItem(k,tasks[i].value);
               }
